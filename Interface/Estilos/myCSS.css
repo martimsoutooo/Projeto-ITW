@@ -39,3 +39,9 @@ li.page-item a {
 #right{
     margin-left: 0px;
 }
+
+.carousel-indicators{
+    border-radius: 13px;
+    height: 9px;
+    width: 35px;
+}

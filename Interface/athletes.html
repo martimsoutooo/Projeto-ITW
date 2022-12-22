@@ -33,5 +33,26 @@
             </div>
         </div>
     </nav>
+    <div id="atletas" style="margin-top: 100px;">
+
+    </div>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $().ready(function(){
+            $.get("http://192.168.160.58/Olympics/Api/Athletes", function(data, status){
+                $("#atletas").html(
+                    function(a){
+                        let atletas = ""
+                        for (let i = 0; i < data.Records.lenght; i++){
+                            atletas += data.Records[i].Name + "<br>"
+                        }
+                        return atletas
+                    }
+                )
+            })})
+    </script>
+    
 </body>
 </html>
