@@ -10,10 +10,10 @@ var vm = function () {
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
     self.currentPage = ko.observable(1);
-    self.pagesize = ko.observable(20);
-    self.totalRecords = ko.observable(50);
+    self.pagesize = ko.observable(50);
+    self.totalRecords = ko.observable(51);
     self.hasPrevious = ko.observable(false);
-    self.hasNext = ko.observable(false);
+    self.hasNext = ko.observable(true);
     self.previousPage = ko.computed(function () {
         return self.currentPage() * 1 - 1;
     }, self);
