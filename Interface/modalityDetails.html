@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Countries Details - Olympics </title>
+    <title>Modalities Details - Olympics </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -39,13 +39,13 @@
         </div>
         <!-- ko if:Name().length > 0 -->
         <div class="row border-bottom mx-0 my-1">
-            <div class="col-2">Country Id</div><div class="col-10" data-bind="text: Id"></div>
+            <div class="col-2">Modality Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1"><div class="col-2">Modality</div>
-            <div class="col-10" data-bind="text: Modality"></div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">Modality</div><div class="col-10" data-bind="text: Modality"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Results</div><div class="col-10" data-bind="text: Results"></div>
@@ -57,8 +57,8 @@
             </div>
         </div>
         <!-- /ko -->
-        <a href="./countries.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        <a data-bind="attr: { href:'./countryFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Setails</a>
+        <a href="./modalities.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        <a data-bind="attr: { href:'./modalityFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Setails</a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -88,6 +88,6 @@
     <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="countryDetails.js"></script>
+    <script src="modalityDetails.js"></script>
 </body>
 </html>
