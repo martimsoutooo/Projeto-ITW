@@ -4,15 +4,15 @@ var vm = function () {
     //---Variáveis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Modalities/');
-    self.displayName = 'Olympic Games edition Details';
+    self.displayName = 'Olympic Modalities edition Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
-    self.Id = ko.observable('');
     self.Name = ko.observable('');
-    self.Photo = ko.observable('');
     self.Modality = ko.observable('');
     self.Results = ko.observable('');
+    self.Id = ko.observable('');
+    self.Photo = ko.observable('');
     self.Url = ko.observable('');
 
     //--- Page Events
@@ -22,11 +22,11 @@ var vm = function () {
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
-            self.Id(data.Id);
-            self.Name(data.Name);
-            self.Photo(data.Photo);
+            self.Name(data.Name);            
             self.Modality(data.Modality);
             self.Results(data.Results);
+            self.Id(data.Id);   
+            self.Photo(data.Photo);                     
         });
     };
 

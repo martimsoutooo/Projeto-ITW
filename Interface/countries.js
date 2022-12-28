@@ -3,9 +3,9 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://http://192.168.160.58/Olympics/api/countries');
+    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/countries');
     //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
-    self.displayName = 'Olympic Games editions List';
+    self.displayName = 'Olympic Countries editions List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
