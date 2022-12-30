@@ -39,16 +39,22 @@
         </div>
         <!-- ko if:Name().length > 0 -->
         <div class="row border-bottom mx-0 my-1">
-            <div class="col-2">Game Id</div><div class="col-10" data-bind="text: Id"></div>
+            <div class="col-2">Modality Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">City Name</div><div class="col-10" data-bind="text: CityName"></div>
+        </div>
+        <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Country Name</div><div class="col-10" data-bind="text: CountryName"></div>
         </div>
-        <div class="row border-bottom mx-0  my-1"><div class="col-2">Season</div>
-            <div class="col-10" data-bind="text: Season"></div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">Latitude</div><div class="col-10" data-bind="text: Lat"></div>
+        </div>
+        <div class="row border-bottom mx-0  my-1">
+            <div class="col-2">Longitude</div><div class="col-10" data-bind="text: Lon"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
             <div class="col-2">Year</div><div class="col-10" data-bind="text: Year"></div>
@@ -66,7 +72,7 @@
         </div>
         <!-- /ko -->
         <a href="./competitions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        <a data-bind="attr: { href:'./gameFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Setails</a>
+        <a data-bind="attr: { href:'./competitionFull.html?id=' + Id() }" class="btn btn-default btn-sm small"><i class="fa fa-th"></i> Full Setails</a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -74,7 +80,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="../images/Olympic_rings.svg" height="30" /> Loading data...
+                        <img src="./Images/LogoOlympics.png" height="30" /> Loading data...
                     </h5>
                 </div>
                 <div class="modal-body text-center">
