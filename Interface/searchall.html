@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home - Olympics </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FavIcon-->
+    <link rel="icon" type="image/x-icon" href="./Images/FavIcon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        #chart {
+            width: 100%;
+            height: 700px;
+            border: none;
+            margin: auto;
+            /* cursor: pointer; */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:rgb(247, 240, 233)">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="./Images/LogoOlympics.png" height="24" alt="Olympics" title="Olympics" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                </ul>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="input-group-text" data-bind="click:procuraTudo"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Events source: 'Game';'Athletes';'Competitions';'Countries'-->
+    <div class="container mt-5">
+        <div id="chart"></div>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- OffCanvas Athletes-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Athletes Found</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <!-- ko foreach:athletesr() -->
+                <!-- ko if: $parent.athletesr().indexOf($data)==0 || $parent.athletesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action" data-bind="text:Text,attr:{href:'athleteDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.athletesr().indexOf($data)==0 || $parent.athletesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action list-group-item-danger" data-bind="text:Text,attr:{href:'athleteDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- OffCanvas Competitions-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRight2Label">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRight2Label">Competitions Found</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <!-- ko foreach:competitionsr() -->
+                <!-- ko if: $parent.competitionsr().indexOf($data)==0 || $parent.competitionsr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action" data-bind="text:Text,attr:{href:'competitionDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.competitionsr().indexOf($data)==0 || $parent.competitionsr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action list-group-item-danger" data-bind="text:Text,attr:{href:'competitionDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- OffCanvas Countries-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasLeftLabel">Countries Found</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <!-- ko foreach:countriesr() -->
+                <!-- ko if: $parent.countriesr().indexOf($data)==0 || $parent.countriesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action" data-bind="text:Text,attr:{href:'countryDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.countriesr().indexOf($data)==0 || $parent.countriesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action list-group-item-danger" data-bind="text:Text,attr:{href:'countryDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- OffCanvas Games-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft2" aria-labelledby="offcanvasLeft2Label">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasLeft2Label">Games Found</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <!-- ko foreach:gamesr() -->
+                <!-- ko if: $parent.gamesr().indexOf($data)==0 || $parent.gamesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action" data-bind="text:Text + ' (id=' + Id + ')',attr:{href:'gameDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: $parent.gamesr().indexOf($data)==0 || $parent.gamesr().indexOf($data)%2==0 -->
+                <a class="list-group-item list-group-item-action list-group-item-danger" data-bind="text:Text + ' (id=' + Id + ')',attr:{href:'gameDetails.html?id=' + Id}"></a>
+                <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+    <!-- Footer -->
+    <nav class="navbar navbar-light bg-light fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
+            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <!-- scripts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Google charts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./Scripts/knockout-3.5.1.js"></script>
+    <script src="./Scripts/jquery-3.6.0.min.js"></script>
+    <script src="./searchall.js"></script>
+</body>
+</html>
