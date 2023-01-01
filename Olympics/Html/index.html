@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href=".../lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Styles/index.css" />
     <!--FavIcon-->
-    <link rel="icon" type="image/x-icon" href="./Images/FavIcon.png">
+    <link rel="icon" type="image/x-icon" href="../Images/favIcon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -87,7 +88,7 @@
 </head>
 <body>
     <div class="topimg">
-        <a href="index.html"><img src="/Interface/Images/FavIcon1.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
+        <a href="index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
     </div>
     <!-- Navbar -->
     <div>
@@ -119,7 +120,7 @@
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="./Interface/Images/vancouverSlide.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="../Images/vancouverSlide.jpg" alt=""></div>
           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg" alt=""></div>
           <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg" alt=""></div>
         </div>
@@ -140,28 +141,11 @@
           </div>
       </div>
     </nav>
-    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
-    <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="myScript.js"></script>
+    <script src=".../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src=".../lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src=".../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../Scripts/index.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
 </body>
 </html>
