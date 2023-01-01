@@ -52,3 +52,22 @@ body{
     width: 150px; 
     height: 35px;
 }
+.page-item{
+    border: #000000 1px solid; 
+}
+.page-link:hover{
+    background-color: white;
+    color: black;
+}
+.active:hover{
+    color: white;
+}
+.active .page-link{
+    background-color: #000000;
+    border: black;
+}
+.page-link{
+    border: black;
+    color: #000000;
+    cursor: pointer;
+}
