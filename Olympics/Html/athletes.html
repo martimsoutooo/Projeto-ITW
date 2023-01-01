@@ -15,10 +15,10 @@
     <link rel="icon" type="image/x-icon" href="../Images/favIcon.png">
     <style>
         tr:nth-child(even) { background-color: white; color:black }
-        nav-link:hover{
+        .nav-link:hover{
             width: 160px;
             height: 50px;
-            transition: 0.3s ease;
+            transform: scale(1.2);
         }
         .topimg{
             width: 100%;
@@ -27,43 +27,74 @@
             display: flex;
             flex-direction: column;
         }
+        .navs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-link{
+            color: white; 
+            width: 150px; 
+            height: 35px; 
+            border-radius: 15px; 
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform .2s;
+            
+        }
+        #countries{
+            background-color: #3498DB;
+        }
+        #athletes{
+            background-color: #F1C40F;
+            margin-left:  60px;
+        }
+        #home{
+            background-color: #000000;
+            margin: 0 70px;
+        }
+        #competitions{
+            background-color: #178344;
+            margin-right:  60px;
+        }
+        #modalities{
+            background-color: #E34B3C;
+        }
+
     </style>
 </head>
 <body>
     <div class="topimg">
-        <a href="./index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 10px 0;"></a> 
+        <a href="./index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
     </div>
     <!-- Navbar -->
-    <div>
+    <div class="navs">
         <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container-fluid">
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" style=" margin: auto;">
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #3498DB; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 5px;" href="./countries.html">Countries</a>
+                    <a class="nav-link" id="countries"  href="./countries.html">Countries</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #000000; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-left:  60px;" href="./index.html">Home</a>
+                    <a class="nav-link" id="athletes" href="./athletes.html">Athletes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #F1C40F; color: white; width: 165px; height: 50px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin: 0 70px; align-items: center;" href="./athletes.html">Athletes</a>
+                    <a class="nav-link" id="home" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #178344; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-right:  60px;" href="./competitions.html">Competitions</a>
+                    <a class="nav-link" id="competitions" href="./competitions.html">Competitions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #E34B3C; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px;" href="./modalities.html">Modalities</a>
+                    <a class="nav-link" id="modalities"  href="./modalities.html">Modalities</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
     </div>
-    
     <!-- Working Area -->
     <div class="container">
-        <br>
-        <br>
         <!-- ko if:records().length > 0 -->
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">
@@ -100,7 +131,7 @@
                         <img src="../Images/logoOlympics.png" class="logo" alt="">
                     </div>
                     <div class="img">
-                       <a data-bind="attr: { href:'./athleteDetails.html?id=' + Id }"><img data-bind="attr: {src: Photo}" class="athlete" alt=""></a>
+                       <a data-bind="attr: { href:'./athletesDetails.html?id=' + Id }"><img data-bind="attr: {src: Photo}" class="athlete" alt=""></a>
                     </div>
                     <div class="name">
                         <h1 style="color: white; font-size: 25px;"  data-bind="text: Name"></h1>

@@ -38,7 +38,7 @@ var vm = function () {
             self.DiedPlace(data.DiedPlace);
             self.OlympediaLink(data.OlympediaLink);
             if (data.Photo == null) {
-                self.Photo('./Images/anyone.jpg')
+                self.Photo('../Images/noImage.jpg')
             } else {
                 self.Photo(data.Photo);
             }

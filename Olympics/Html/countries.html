@@ -21,35 +21,35 @@
 <body>
    <!-- Navbar -->
    <div>
+    <div class="topimg">
+        <a href="./index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
+    </div>
     <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style=" margin: auto;">
-              <li class="nav-item">
-                <a class="nav-link" style="background-color: #3498DB; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 5px;transition: transform .2s;" href="./countries.html">Countries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="background-color: #000000; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-left:  60px;transition: transform .2s;" href="./index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="background-color: #F1C40F; color: white; width: 165px; height: 50px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin: 0 70px; align-items: center;" href="./athletes.html">Athletes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="background-color: #178344; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-right:  60px;transition: transform .2s;" href="./competitions.html">Competitions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="background-color: #E34B3C; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px;transition: transform .2s;" href="./modalities.html">Modalities</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="countries"  href="./countries.html">Countries</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="athletes" href="./athletes.html">Athletes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="home" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="competitions" href="./competitions.html">Competitions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="modalities"  href="./modalities.html">Modalities</a>
+                  </li>
             </ul>
           </div>
         </div>
       </nav>
-</div>
+    </div>
     <!-- Working Area -->
     <div class="container">
-        <div class="border-bottom py-2 mb-2">
-            <h2 data-bind="text:displayName"></h2>
-        </div>
         <!-- ko if:records().length > 0 -->
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">

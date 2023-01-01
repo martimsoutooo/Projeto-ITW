@@ -16,75 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <style>
-        .carousel { width: 100%; margin: 0 auto; }
-        .carousel-item { z-index: -100; height: 800px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
-            .carousel-item:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg'); }
-            .carousel-item:nth-child(2) { background-image: url('./Images/VancouverCarrousel.jpg'); }
-            .carousel-item:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg'); }
-            .carousel-item:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg'); }
-        .topimg{
-            width: 100%;
-            height: 25%;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-      .swiper {
-        width: 84vw;
-        height: 46vh;
-      }
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .swiper {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .swiper-pagination-bullet-active{
-        background-color: white;
-      }
-      .swiper-pagination-bullet{
-        width: 40px;
-        height: 7px;
-        border-radius: 4px;
-      }
-      .linha1{
-        display: flex;
-
-      }
-      .content{
-        margin-top: 100px;
-        width: 84%;
-        margin: auto;
-
-      }
-    </style>
 </head>
 <body>
     <div class="topimg">
@@ -97,19 +29,19 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" style=" margin: auto;">
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #3498DB; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 5px;" href="./countries.html">Countries</a>
+                    <a class="nav-link" id="countries"  href="./countries.html">Countries</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #F1C40F; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-left:  60px;" href="./athletes.html">Athletes</a>
+                    <a class="nav-link" id="athletes" href="./athletes.html">Athletes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #000000; color: white; width: 165px; height: 50px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin: 0 70px;" href="./index.html">Home</a>
+                    <a class="nav-link" id="home" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #178344; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px; margin-right:  60px;" href="./competitions.html">Competitions</a>
+                    <a class="nav-link" id="competitions" href="./competitions.html">Competitions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="background-color: #E34B3C; color: white; width: 150px; height: 35px; border-radius: 15px; text-align: center; padding-bottom: 15px;" href="./modalities.html">Modalities</a>
+                    <a class="nav-link" id="modalities"  href="./modalities.html">Modalities</a>
                   </li>
                 </ul>
               </div>
@@ -147,5 +79,20 @@
     <script src="../Scripts/index.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+    </script>
 </body>
 </html>

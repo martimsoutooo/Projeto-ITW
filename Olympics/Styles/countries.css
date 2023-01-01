@@ -1,55 +1,61 @@
-/*
-            .cards{
-                width: 300px;
-                height: 450px;
-                background-color: rgb(212, 13, 13);
-                border-radius: 15px;
-                align-items: center;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 20px;
-               
-            }
-            .logo{
-                width: 70px;
-                height: 35px;
-                margin-top: 10px;
-            }
-            .athlete{
-                width: 225px;
-                height: 225px;
-                border-radius: 50%;
-                border: solid rgb(212, 13, 13) 4px ;
-            }
-            .cards::before{
-                content: "";
-                height: 200px;
-                width: 300px;
-                position: absolute;
-                background-color: white;
-                border-radius: 15px 15px 0 0;
-
-            }
-            .cardcontents{
-                z-index: 100;
-                
-            }
-            .cardcontainers{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-
-            }*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600;700;800&display=swap');
 .cardscontainer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600;700;800&display=swap');
-            body{  
-                font-family: 'Inter', sans-serif;
-            }
+
+body{  
+    font-family: 'Open-sans', sans-serif;
+    background-color: white;
+}
+.topimg{
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.nav-link:hover{
+    width: 160px;
+    height: 50px;
+    color: white;
+    transform: scale(1.2);
+}
+.nav-link{
+    color: white; 
+    border-radius: 15px; 
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform .2s;
+    
+}
+#countries{
+    background-color: #3498DB;
+    width: 165px; 
+    height: 50px;
+}
+#athletes{
+    background-color: #F1C40F;
+    margin-left:  60px;
+    width: 150px; 
+    height: 35px;
+}
+#home{
+    background-color: #000000;
+    margin: 0 70px;
+    width: 150px; 
+    height: 35px;
+}
+#competitions{
+    background-color: #178344;
+    margin-right:  60px;
+    width: 150px; 
+    height: 35px;
+}
+#modalities{
+    background-color: #E34B3C;
+    width: 150px; 
+    height: 35px;
+}
