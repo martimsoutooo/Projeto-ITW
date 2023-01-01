@@ -37,7 +37,12 @@ var vm = function () {
             self.DiedDate(data.DiedDate);
             self.DiedPlace(data.DiedPlace);
             self.OlympediaLink(data.OlympediaLink);
-            self.Photo(data.Photo);
+            if (data.Photo == null) {
+                self.Photo('./Images/anyone.jpg')
+            } else {
+                self.Photo(data.Photo);
+            }
+            
         });
     };
 

@@ -51,6 +51,9 @@ var vm = function () {
     self.totalRecords = ko.observable(135571);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(true);
+    
+    self.Name = ko.observable('');
+    self.Photo = ko.observable('')
     self.previousPage = ko.computed(function () {
         return self.currentPage() * 1 - 1;
     }, self);
@@ -94,6 +97,11 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
+            if (data.Photo == null) {
+                self.Photo('./Images/anyone.jpg')
+            } else {
+                self.Photo(data.Photo);
+            }
             //self.SetFavourites();
         });
     };
