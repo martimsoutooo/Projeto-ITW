@@ -97,11 +97,9 @@ tr:nth-child(even) { background-color: white; color:black }
     width: 150px; 
     height: 35px;
 }
-.page-item{
-    border: #000000 1px solid; 
-}
+
 .page-link:hover{
-    background-color: white;
+    background-color: #f1f1f1;
     color: black;
 }
 .active:hover{
@@ -115,4 +113,5 @@ tr:nth-child(even) { background-color: white; color:black }
     border: black;
     color: #000000;
     cursor: pointer;
+    background-color: #f1f1f1;
 }
