@@ -48,10 +48,12 @@
     <div class="container">
         <!-- ko if:records().length > 0 -->
         <div class="row small">
-            <p class=" col-4 mr-auto pt-2">
-                <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Competitions: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
-            </p>
+            <div class=" col-4 mr-auto pt-2">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 25px; padding-left: 10px;">
+                    <button type="submit" style="border: none; outline: none; background-color: white; font-size: 20px;"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
@@ -94,7 +96,7 @@
                     <td class="align-middle" data-bind="text:Modality"></td>
                     <td class="align-middle" data-bind="text:Results"></td>                    
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./competitionDetails.html?id=' + Id }">
+                        <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./competitionsDetails.html?id=' + Id }">
                             <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
                         </a>
                         <button class="btn btn-default btn-xs">
