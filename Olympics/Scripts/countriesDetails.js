@@ -14,7 +14,7 @@ var vm = function () {
     self.Results = ko.observable('');
     self.Photo = ko.observable('');
     self.Url = ko.observable('');
-
+    
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getCountry...');
