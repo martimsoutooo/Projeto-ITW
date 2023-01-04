@@ -75,6 +75,32 @@
     <br>
     <br>
     <!-- Footer -->
+    <h3 style="padding-left: 120px;">Give us your opinion... </h3>
+    <form style="padding-left: 120px;" class="row g-3 needs-validation" novalidate action="http://192.168.160.36/FormEcho.aspx" method="post">
+    <div class="col-md-4 form-floating">
+      <input type="text" class="form-control" name="Name" id="Name" pattern="[A-Z,a-z]{3,}" required>
+      <label for="validationCustom01" class="form-label">Name</label>
+    <div class="invalid-feedback">Type your name</div>
+    <div class="valid-feedback">Done</div>
+    </div>
+    </div>
+    <div class="col-md-4 form-floating">
+      <input type="email" class="form-control" name="Email" id="Email" pattern="[A-Z,a-z]{3,}" required>
+      <label for="Email" class="form-label">Email</label>
+    <div class="invalid-feedback">Invalid email</div>
+    </div>
+    <div class="form-group">
+      <label for="Comment" class="form-label">Comment</label>      
+      <textarea class="form-control" id="Comment" rows="3" name="Comment"></textarea>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit"></i> Send </button>
+      <button class="btn btn-danger" type="reset"><i class="fa fa-trash-o"></i></button>
+    </div>
+    </form>
+    <!---->
+    <br>
+    <br>
     <nav class="navbar navbar-light bg-light">
       <div class="container small">
           <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
