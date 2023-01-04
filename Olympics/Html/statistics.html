@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Olympics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Styles/statistics.css">
+    <!--FavIcon-->
+    <link rel="icon" type="image/x-icon" href="../Images/favIcon.png">
+</head>
+<body>
+    <div class="topimg">
+        <a href="./index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
+    </div>
+    <!-- Navbar -->
+    <div class="navs">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" style=" margin: auto;">
+                  <li class="nav-item">
+                    <a class="nav-link" id="statistics"  href="./statistics.html" style="color: red;"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="countries"  href="./countries.html">Countries</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="athletes" href="./athletes.html">Athletes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="home" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="competitions" href="./competitions.html">Competitions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="modalities"  href="./modalities.html">Modalities</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="favourites"  href="./favourites.html" style="color: red;"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Bar Charts</h1>
+    <br>
+    <div class="container">     
+        <canvas style="height:550px; width:1500px" id="modalidades"></canvas>
+    </div>
+    <br>
+    <br>
+    <div class="container">     
+        <canvas style="height:550px; width:1500px" id="atletas"></canvas>
+    </div>
+    <br>
+    <br>
+    <div class="container">     
+        <canvas style="height:550px; width:1500px" id="paises"></canvas>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Pie Charts</h1>
+    <br>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/jquery-ui/dist/jquery-ui.js"></script>
+    <link rel="stylesheet" href="..\lib\jquery-ui\dist\themes\base\jquery-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <script src="../Scripts/statistics.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
 }
+tr:nth-child(even) { background-color: white; color:black }
 .nav-link:hover{
     width: 160px;
     height: 50px;
@@ -56,23 +57,6 @@
 #statistics{
     background-color: #e0dfdf;
     width: 50px;
-    height: 35px;
-    margin-right: 25px;
+    height: 50px;
+    margin-right: 40px;
   }
-.page-link:hover{
-    background-color: #f1f1f1;
-    color: black;
-}
-.active:hover{
-    color: white;
-}
-.active .page-link{
-    background-color: #000000;
-    border: black;
-}
-.page-link{
-    border: black;
-    color: #000000;
-    cursor: pointer;
-    background-color: #f1f1f1;
-}

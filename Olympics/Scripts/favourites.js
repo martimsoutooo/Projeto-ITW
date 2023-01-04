@@ -2,13 +2,17 @@ var vm = function() {
     var self = this
 
     self.metaData = {
-        favs: [],
+        athletes: [],
+        competitions: [],
         countries: [],
+        games: [],
         modalities: [],
-    }
+}
 
-    self.favsData = ko.observableArray()
+    self.athletesData = ko.observableArray()
+    self.competitionsData = ko.observableArray()
     self.countriesData = ko.observableArray()
+    self.gamesData = ko.observableArray()
     self.modalitiesData = ko.observableArray()
 
     self.updateLocalStorage = (key, data) => {
@@ -22,7 +26,7 @@ var vm = function() {
         for (e in array) {
             $.ajax({
                 type: "GET",
-                url: "http://192.168.160.58/Olympics/api/Athletes/id" + array[e],
+                url: "http://192.168.160.58/Olympics/api/Athletes/" + array[e],
                 async: false,
                 success: function(data) {
                     temp.push(data)
@@ -38,7 +42,7 @@ var vm = function() {
         for (e in array) {
             $.ajax({
                 type: "GET",
-                url: "http://192.168.160.58/Olympics/api/Games/id" + array[e],
+                url: "http://192.168.160.58/Olympics/api/Competitions/" + array[e],
                 async: false,
                 success: function(data) {
                     temp.push(data)
@@ -54,7 +58,7 @@ var vm = function() {
         for (e in array) {
             $.ajax({
                 type: "GET",
-                url: "http://192.168.160.58/Olympics/api/Modalities/id" + array[e],
+                url: "http://192.168.160.58/Olympics/api/Countries/" + array[e],
                 async: false,
                 success: function(data) {
                     temp.push(data)
@@ -63,6 +67,36 @@ var vm = function() {
         }
         return temp
     }
+
+    self.loadData3 = function(array) {
+        let temp = []
+        for (e in array) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.160.58/Olympics/api/Games/" + array[e],
+                async: false,
+                success: function(data) {
+                    temp.push(data)
+                }
+            });
+        }
+        return temp
+    }
+    self.loadData4 = function(array) {
+        let temp = []
+        for (e in array) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.160.58/Olympics/api/Modalities/" + array[e],
+                async: false,
+                success: function(data) {
+                    temp.push(data)
+                }
+            });
+        }
+        return temp
+    }
+
 
 
     self.updateMetaData = function(id, name) {
@@ -74,9 +108,11 @@ var vm = function() {
             self.metaData[name].splice(self.metaData[name].indexOf(String(id)), 1)
             self.updateLocalStorage(name, self.metaData[name])
         }
-        self.favsData(self.loadData(self.metaData.favs))
-        self.countriesData(self.loadData1(self.metaData.countries))
-        self.modalitiesData(self.loadData2(self.metaData.modalities))
+        self.athletesData(self.loadData(self.metaData.athletes))
+        self.competitionsData(self.loadData1(self.metaData.competitions))
+        self.countriesData(self.loadData2(self.metaData.countries))
+        self.gamesData(self.loadData3(self.metaData.games))
+        self.modalitiesData(self.loadData4(self.metaData.modalities))
     }
 
 
@@ -88,13 +124,18 @@ var vm = function() {
                 self.metaData[k] = []
             }
         }
-        self.favsData(self.loadData(self.metaData.favs))
-        self.countriesData(self.loadData1(self.metaData.countries))
-        self.modalitiesData(self.loadData2(self.metaData.modalities))
-        console.log(self.metaData.modalities)
+        self.athletesData(self.loadData(self.metaData.athletes))
+        self.competitionsData(self.loadData1(self.metaData.competitions))
+        self.countriesData(self.loadData2(self.metaData.countries))
+        self.gamesData(self.loadData3(self.metaData.games))
+        self.modalitiesData(self.loadData4(self.metaData.modalities))
+        console.log(self.metaData.athletes)
     }
     self.init()
+$("#tagsAthletes").val(undefined)
 }
+
+
 
 $(document).ready(function() {
     console.log("ready!");

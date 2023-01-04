@@ -140,6 +140,18 @@ body{
     width: 150px; 
     height: 35px;
 }
+#favourites{
+  background-color: #e0dfdf;
+  width: 50px;
+  height: 35px;
+  margin-left: 25px;
+}
+#statistics{
+  background-color: #e0dfdf;
+  width: 50px;
+  height: 35px;
+  margin-right: 25px;
+}
 #map {
   width: 84%;
   height: 768px;
