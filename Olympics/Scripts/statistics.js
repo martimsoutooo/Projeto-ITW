@@ -146,53 +146,78 @@ var NameCt = [];
                 }
                 });
                 }
-var CounterMed = [];
-var CountryName = [];
-                $.ajax({
-                type: 'GET',
-                url: 'http://192.168.160.58/Olympics/api/statistics/Medals_Country?id=' + pg,
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                success: function (data, status, xhr) {
 
-                var medData = data;
+var countryName = [];
+var counterMedG = [];
+    $.ajax({
+    type: 'GET',
+    url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    success: function(data){ 
+        for(let i=0; i<data.lenght; i++){
+            countryName.push(data.CountryName);
+            counterMedG.push(data.Medals[0]); 
+        }
+        createPieGraphs()
+    }});
+            
+    function createPieGraphs() {
+    let PieChartz = new Chart("medalsG", {
+        type: "pie",
+        data: {
+        labels: countryName,
+        datasets: [{
+        data: counterMedG
+        }]
+        },  
+    })
+    };
 
-                medData.forEach(element => {
-                CounterMed.push(element.Medals.reduce((accum, ele) => ele.Counter + accum, 0))
-                CountryName.push(element.CountryName);
-                });
 
-                createPieGraph(CounterMed, CountryName);
 
+
+/*var countryName = []
+var counterMedG = []
+var counterMedS = []
+var counterMedB = []
+
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+        $.ajax({
+            type: 'GET',
+            url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
+            success: function(data){ 
+                for(let i=0; i<data.lenght; i++){
+                    countryName.push(data.CountryName);
+                    counterMedG.push(data.Medals[0]); 
+                    counterMedS.push(data.Medals[1]);
+                    counterMedB.push(data.Medals[2]);
                 }
-                });
+            }
 
-                function createPieGraph(Counter, CountryName) {
-                let barChart = new Chart("graficosos", {
-                type: "bar",
-                data: {
-                labels: CountryName,
-                datasets: [{
-                data: Counter,
-                label: 'Number of Medals per country in this Olympic Games edition',
-                backgroundColor: ["rgba(255, 56, 56, 0.5)", "rgba(59, 255, 131, 0.8)"],
-                borderColor: ['rgba(255, 0, 0, 0.8)','rgba(15, 212, 87, 1)',],
-                borderWidth: 1  
-                }]
-                },
-                options:{ 
-                    indexAxis: 'y',
-                    animations: {
-                    tension: {
-                        duration: 1000,
-                        easing: 'linear',
-                        from: 1,
-                        to: 0,
-                        loop: true
-                    }
-                    },
-                
-                }
-                });
-                }
+        });
+    function pushArrayG(){
+        lst= [['Countries', 'Medals']];
+        for(let i = 0; i<counterMedG.lenght; i++){
+            lst.push([countryName[i],counterMedG[i]])
+        }
+        return lst
+    }
+    
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(
+      pushArrayG()
+    )};
+
+            
+    var options = {
+      title: 'My Daily Activities',
+      is3D: true,
+    };
+            
+    var chart = new google.visualization.PieChart(document.getElementById('gold'));
+    chart.draw(data, options);*/
+
+    
