@@ -92,6 +92,57 @@ function hideLoading() {
     })
 }
 
+const Joi = require('joi');
+
+const schema = Joi.object({
+    username: Joi.string()
+        .alphanum()
+        .min(3)
+        .max(30)
+        .required(),
+
+    Comment: [
+        Joi.string(),
+        Joi.number()
+    ],
+
+
+    Email: Joi.string()
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
+})
+
+schema.validate({ username: 'abc' });
+// -> { value: { username: 'abc' } }
+
+schema.validate({});
+// -> { value: {}, error: '"Name" is required' }
+
+
+try {
+    const value = await schema.validateAsync({ username: 'abc' });
+}
+catch (err) { }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $(document).ready(function(){
