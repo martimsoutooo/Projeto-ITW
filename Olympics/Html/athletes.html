@@ -90,7 +90,12 @@
                         <img src="../Images/logoOlympics.png" class="logo" alt="">
                     </div>
                     <div class="img">
+                        <!-- ko if: Photo -->
                        <a data-bind="attr: { href:'./athletesDetails.html?id=' + Id }"><img data-bind="attr: {src: Photo}" class="athlete" alt=""></a>
+                       <!-- /ko -->
+                       <!-- ko ifnot: Photo -->
+                       <a data-bind="attr: { href:'./athletesDetails.html?id=' + Id }"><img src="../Images/noImage.jpg" class="athlete" alt=""></a>
+                       <!-- /ko -->
                     </div>
                     <div class="name">
                         <h1 style="color: white; font-size: 25px;"  data-bind="text: Name"></h1>
