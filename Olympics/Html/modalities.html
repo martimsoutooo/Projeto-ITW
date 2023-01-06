@@ -94,7 +94,7 @@
             <tbody data-bind="foreach: records">
                 <tr>
                     <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle" data-bind="attr: { scr: Photo }"></td>
+                    <td class="align-middle" ><img width="50px" height="50px" class="img-thumbnail" data-bind="attr:{src: Photo}"></td>
                     <td class="align-middle" data-bind="text:Id"></td>                    
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./modalitiesDetails.html?id=' + Id }">

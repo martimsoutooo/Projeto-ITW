@@ -16,23 +16,41 @@
      
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="./index.html" tabindex="Olympics"><img src="./Images/LogoOlympics.png" height="24" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+    <div class="topimg">
+        <a href="./index.html"><img src="../Images/favIcon.png" style="width: 220px; height: 130px; margin: 45px 0;"></a> 
+    </div>
+    <!-- Navbar -->
+    <div class="navs">
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" style=" margin: auto;">
+                  <li class="nav-item">
+                    <a class="nav-link" id="statistics"  href="./statistics.html" style="color: red;"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="countries"  href="./countries.html">Countries</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="athletes" href="./athletes.html">Athletes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="home" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="competitions" href="./competitions.html">Competitions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="modalities"  href="./modalities.html">Modalities</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="favourites"  href="./favourites.html" style="color: red;"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </li>
                 </ul>
+              </div>
             </div>
-        </div>
-    </nav>
+          </nav>
+    </div>
     <!-- Work Area-->
     <div class="container">
         <div class="py-2 border-bottom mb-3">
@@ -46,24 +64,13 @@
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">City Name</div><div class="col-10" data-bind="text: CityName"></div>
+            <div class="col-2">Modality Id</div><div class="col-10" data-bind="text: ModalityId"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Country Name</div><div class="col-10" data-bind="text: CountryName"></div>
+            <div class="col-2">Modality Name</div><div class="col-10" data-bind="text: Modality"></div>
         </div>
         <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Latitude</div><div class="col-10" data-bind="text: Lat"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Longitude</div><div class="col-10" data-bind="text: Lon"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1">
-            <div class="col-2">Year</div><div class="col-10" data-bind="text: Year"></div>
-        </div>
-        <div class="row border-bottom mx-0  my-1" data-bind="visible: Logo() != '' && Logo() != null">
-            <div class="col-2">Logo</div><div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Logo}"><br /><i class="fa fa-link"></i><br />
-                [<a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>]</div>
+            <div class="col-2">Participant</div><div class="col-10" data-bind="text: Participant"></div>
         </div>
         <div class="row border-bottom mx-0  my-1" data-bind="visible: Photo() != '' && Photo() != null">
             <div class="col-2">Photo</div><div class="small col-10">

@@ -9,8 +9,7 @@ var vm = function () {
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Name = ko.observable('');
-    self.Modality = ko.observable('');
-    self.Results = ko.observable('');
+    self.Modalities = ko.observableArray('');
     self.Id = ko.observable('');
     self.Photo = ko.observable('');
     self.Url = ko.observable('');
@@ -23,8 +22,7 @@ var vm = function () {
             console.log(data);
             hideLoading();
             self.Name(data.Name);            
-            self.Modality(data.Modality);
-            self.Results(data.Results);
+            self.Modalities(data.Modalities);
             self.Id(data.Id);   
             self.Photo(data.Photo);                     
         });

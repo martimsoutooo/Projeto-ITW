@@ -10,14 +10,10 @@ var vm = function () {
     //--- Data Record
     self.Id = ko.observable('');
     self.Name = ko.observable('');    
-    self.CityName = ko.observable('');
-    self.CountryName = ko.observable('');
-    self.Lat = ko.observable('');
-    self.Lon = ko.observable('');
-    self.Logo = ko.observable('');
+    self.ModalityId = ko.observable('');
+    self.Modality = ko.observable('');
+    self.Participant = ko.observable('');    
     self.Photo = ko.observable('');
-    self.Season = ko.observable('');
-
     self.Url = ko.observable('');
 
     //--- Page Events
@@ -29,12 +25,9 @@ var vm = function () {
             hideLoading();
             self.Id(data.Id);
             self.Name(data.Name);    
-            self.CityName(data.CityName);        
-            self.CountryName(data.CountryName);
-            self.Lat(data.Lat);
-            self.Lon(data.Lon);
-            self.Year(data.Year);
-            self.Logo(data.Logo);            
+            self.ModalityId(data.ModalityId);        
+            self.Modality(data.Modality);
+            self.Participant(data.Participant);          
             self.Photo(data.Photo);            
         });
     };
