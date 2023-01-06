@@ -15,15 +15,14 @@
     <!--FavIcon-->
     <link rel="icon" type="image/x-icon" href="../Images/favIcon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <style>
-      body{
-        background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-042.jpg');
-        background-size: cover;
-      }
+      .carousel { width: 100%; margin: 0 auto; }
+      .carousel-item { z-index: -100; height: 650px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+          .carousel-item:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg'); }
+          .carousel-item:nth-child(2) { background-image: url('../Images/vancouverSlide.jpg'); }
+          .carousel-item:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg'); }
+          .carousel-item:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg'); }
     </style>
-
 </head>
 <body>
     <div class="topimg">
@@ -62,28 +61,59 @@
           </nav>
     </div>
     <!-- Carousel -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="../Images/vancouverSlide.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg" alt=""></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg" alt=""></div>
-        </div>
-        <div class="swiper-button-next" style="color: white;"></div>
-        <div class="swiper-button-prev" style="color: white;"></div>
-        <div class="swiper-pagination"></div>
+    <!-- Working Area -->
+    <div id="myCarousel" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="carousel-caption d-none d-md-block">
+                  <div class="display-1">Beijing 2008</div>
+                  <p>The 2008 Summer Olympics, officially the Games of the XXIX Olympiad and also known as Beijing 2008, were an international multisport event held from 8 to 24 August 2008, in Beijing, China.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                  <div class="display-1">Vancouver 2010</div>
+                  <p>The 2010 Winter Olympics, officially known as the XXI Olympic Winter Games and also known as Vancouver 2010, were an international winter multi-sport event held from February 12 to 28, 2010 in Vancouver, British Columbia, Canada, with some events held in the surrounding suburbs of Richmond, West Vancouver and the University of British Columbia, and in the nearby resort town of Whistler.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                  <div class="display-1">Rio de Janeiro 2016</div>
+                  <p>The 2016 Summer Olympics, officially the Games of the XXXI Olympiad and also known as Rio 2016, was an international multi-sport event held from 5 to 21 August 2016 in Rio de Janeiro, Brazil.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                  <div class="display-1">Tokio 2020</div>
+                  <p>The 2020 Summer Olympics, officially the Games of the XXXII Olympiad and also known as Tokyo 2020, was an international multi-sport event held from 23 July to 8 August 2021 in Tokyo, Japan.</p>
+              </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- Content -->
    
-        <div id="map" style="margin: auto"></div>
+        
       
     <!--MAPA-->
-   
+      <div id="map" style="margin: auto"></div>
     <!--MAPA-->
     <br>
     <br>
@@ -153,22 +183,6 @@ aria-label="Close"></button>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../Scripts/index.js"></script>
     <script src="../leaflet/leaflet.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-    </script>
+    
 </body>
 </html>

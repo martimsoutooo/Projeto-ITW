@@ -147,77 +147,39 @@ var NameCt = [];
                 });
                 }
 
-var countryName = [];
-var counterMedG = [];
-    $.ajax({
-    type: 'GET',
-    url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
-    headers: {
-    'Content-Type': 'application/json'
-    },
-    success: function(data){ 
-        for(let i=0; i<data.lenght; i++){
-            countryName.push(data.CountryName);
-            counterMedG.push(data.Medals[0]); 
-        }
-        createPieGraphs()
-    }});
-            
-    function createPieGraphs() {
-    let PieChartz = new Chart("medalsG", {
-        type: "pie",
-        data: {
-        labels: countryName,
-        datasets: [{
-        data: counterMedG
-        }]
-        },  
-    })
-    };
-
-
-
-
-/*var countryName = []
-var counterMedG = []
-var counterMedS = []
-var counterMedB = []
-
   google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChart); 
+  function drawChart() {
+        lst= [['Countries', 'Medals']];
         $.ajax({
             type: 'GET',
             url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
             success: function(data){ 
-                for(let i=0; i<data.lenght; i++){
-                    countryName.push(data.CountryName);
-                    counterMedG.push(data.Medals[0]); 
-                    counterMedS.push(data.Medals[1]);
-                    counterMedB.push(data.Medals[2]);
+                var countryName = []
+                var counterMedG = []
+                console.log(data.length)
+                for(let i=0; i<data.length; i++){
+                    console.log('oi');
+                    countryName.push(data[i].CountryName);
+                    counterMedG.push(data[i].Medals[0].Counter); 
                 }
-            }
-
-        });
-    function pushArrayG(){
-        lst= [['Countries', 'Medals']];
-        for(let i = 0; i<counterMedG.lenght; i++){
-            lst.push([countryName[i],counterMedG[i]])
-        }
-        return lst
-    }
-    
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable(
-      pushArrayG()
-    )};
-
-            
-    var options = {
-      title: 'My Daily Activities',
-      is3D: true,
+                for(let i = 0; i<counterMedG.length; i++){
+                lst.push([countryName[i],counterMedG[i]])
+                }
+                var data1 = google.visualization.arrayToDataTable(lst);    
+                var options = {
+                    title: 'Gold Medals per Country',
+                    is3D: true,
+              };
+                      
+              var chart = new google.visualization.PieChart(document.getElementById('gold'));
+              chart.draw(data1, options);
+             
+        }});
+      
+         
     };
-            
-    var chart = new google.visualization.PieChart(document.getElementById('gold'));
-    chart.draw(data, options);*/
+
+        
 
     
