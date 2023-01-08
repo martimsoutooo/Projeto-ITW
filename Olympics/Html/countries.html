@@ -82,14 +82,35 @@
             </div>
         </div>
         <!-- /ko -->
-        <div class="cardscontainer" data-bind="foreach: records">
-            <div class="card" style="width: 18rem; margin-bottom: 15px; border: solid #e2e0e0 1px;" >
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="card-img-top" width="280px" height="190px" style="border-bottom: solid #e2e0e0 1px;" src="" data-bind="attr: {src: Flag}" alt="Card image cap"></button>
-                <div class="card-body">
-                    <p class="card-text" style="text-align: center; font-family: 'Open-sans', sans-serif;"  data-bind="text: Name"></p>
+        <div class="container" style ="margin-top: 150px ;">
+            <div class="cardcontainers" data-bind="foreach: records"> 
+                <div class="cards">
+                    <div class="cardcontents">
+                        <div class="toplogo">
+                            <img src="../Images/logoOlympics.png" class="logo" alt="">
+                        </div>
+                        <div class="img">
+                            <!-- ko if: Flag -->
+                           <a data-bind="attr: { href:'./countriesDetails.html?id=' + Id }"><img data-bind="attr: {src: Flag}" class="athlete" alt=""></a>
+                           <!-- /ko -->
+                           <!-- ko ifnot: Flag -->
+                           <a data-bind="attr: { href:'./countriesDetails.html?id=' + Id }"><img src="../Images/noImage.jpg" class="athlete" alt=""></a>
+                           <!-- /ko -->
+                        </div>
+                        <div class="name">
+                            <h1 style="color: white; font-size: 25px;"  data-bind="text: Name"></h1>
+                        </div>
+                        <div class="favoritos" style="display: flex;">
+                            <button style="background-color: white;" data-bind="click: $parent.updateMetaData.bind($data,Id,'countries')" type="button" class="btn btn-default btn-sm" id="athletes-button" href="#">
+                                <i aria-hidden="true" data-bind="class: 'fa fa-heart-o text-danger ' + Id" title="Selecione para adicionar aos favoritos"></i>
+                            </button>
+                            <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./athletesDetails.html?id=' + Id }">
+                                <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> 
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
