@@ -3,5 +3,7 @@ Alterações após entrega:
 Favoritos funcionais;
 Gŕaficos;
 Formulário (Give us your opinion)
+cards colocados iguais em todas as pag
+carrousel da home amplificado
 
 
