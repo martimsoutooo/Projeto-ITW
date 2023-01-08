@@ -100,13 +100,15 @@
                         <div class="name">
                             <h1 style="color: white; font-size: 25px;"  data-bind="text: Name"></h1>
                         </div>
-                        <div class="favoritos" style="display: flex;">
+                        <div class="favoritos" style="display: flex; align-items: center; justify-content: center;">
                             <button style="background-color: white;" data-bind="click: $parent.updateMetaData.bind($data,Id,'countries')" type="button" class="btn btn-default btn-sm" id="athletes-button" href="#">
                                 <i aria-hidden="true" data-bind="class: 'fa fa-heart-o text-danger ' + Id" title="Selecione para adicionar aos favoritos"></i>
                             </button>
-                            <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./countriesDetails.html?id=' + Id }">
-                                <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
-                            </a>
+                            <button class="btn btn-default btn-light btn-xs" style="margin-left: 10px; height: 40px; width: 40px; background-color: white;">
+                                <a data-bind="attr: { href:'./countriesDetails.html?id=' + Id }">
+                                    <i style="font-size: 15px; color: black; text-align: center;" class="fa fa-eye" title="Selecione para ver detalhes"></i>
+                                </a>
+                            </button>
                         </div>
                     </div>
                 </div>
