@@ -181,5 +181,69 @@ var NameCt = [];
     };
 
         
-
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart1); 
+    function drawChart1() {
+          lst1= [['Countries', 'Medals']];
+          $.ajax({
+              type: 'GET',
+              url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
+              success: function(data){ 
+                  var countryName1 = []
+                  var counterMedS = []
+                  console.log(data.length)
+                  for(let i=0; i<data.length; i++){
+                      console.log('oi');
+                      countryName1.push(data[i].CountryName);
+                      counterMedS.push(data[i].Medals[1].Counter); 
+                  }
+                  for(let i = 0; i<counterMedS.length; i++){
+                  lst1.push([countryName1[i],counterMedS[i]])
+                  }
+                  var data2 = google.visualization.arrayToDataTable(lst1);    
+                  var options1 = {
+                      title: 'Silver Medals per Country',
+                      is3D: true,
+                };
+                        
+                var chart1 = new google.visualization.PieChart(document.getElementById('silver'));
+                chart1.draw(data2, options1);
+               
+          }});
+        
+           
+      };
+    
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart2); 
+    function drawChart2() {
+          lst2= [['Countries', 'Medals']];
+          $.ajax({
+              type: 'GET',
+              url: 'http://192.168.160.58/Olympics/api/Statistics/Medals_Country',
+              success: function(data){ 
+                  var countryName2 = []
+                  var counterMedB = []
+                  console.log(data.length)
+                  for(let i=0; i<data.length; i++){
+                      console.log('oi');
+                      countryName2.push(data[i].CountryName);
+                      counterMedB.push(data[i].Medals[2].Counter); 
+                  }
+                  for(let i = 0; i<counterMedB.length; i++){
+                  lst2.push([countryName2[i],counterMedB[i]])
+                  }
+                  var data3 = google.visualization.arrayToDataTable(lst2);    
+                  var options2 = {
+                      title: 'Bronze Medals per Country',
+                      is3D: true,
+                };
+                        
+                var chart2 = new google.visualization.PieChart(document.getElementById('bronze'));
+                chart2.draw(data3, options2);
+               
+          }});
+        
+           
+      };
     
